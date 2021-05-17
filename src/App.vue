@@ -1,6 +1,7 @@
 <template>
   <div>
     <QuestionList />
+    <router-view />
   </div>
 </template>
 
