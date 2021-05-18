@@ -1,7 +1,7 @@
 <template>
   <div>
     <QuestionList />
-    <router-view :question="question" :text="text"/>
+    <router-view :question="question" :text="text" @change-text="newText"/>
   </div>
 </template>
 
@@ -16,6 +16,11 @@ export default {
     return {
       question:"質問が入ります。",
       text:"aa",
+    }
+  },
+  methods: {
+    newText(newText){
+      this.text = newText;
     }
   }
 }

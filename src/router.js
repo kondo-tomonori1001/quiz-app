@@ -14,11 +14,13 @@ export default new Router({
       path: '/',
       component: Index,
       name: 'index',
+      props: true
     },
     {
       path: '/answer',            
       component: Answer,
       name: 'answer',
+      props: true
     },
   ]
 });
