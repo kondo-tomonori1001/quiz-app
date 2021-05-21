@@ -1,7 +1,7 @@
 <template>
   <div>
     <QuestionList />
-    <router-view :items="items" />
+    <router-view :items="questionList" />
   </div>
 </template>
 
@@ -20,9 +20,10 @@ export default {
       text:"aa",
     }
   },
-  methods: {
-    newText(newText){
-      this.text = newText;
+  computed: {
+    questionList() {
+      console.log('computed');
+      return this.items;
     }
   },
   created() {
@@ -30,7 +31,6 @@ export default {
       .get('/data/question.json')
       .then(res => {
         this.items = res.data;
-        console.log(res);
       })
       .catch(err => {
         console.error(err);

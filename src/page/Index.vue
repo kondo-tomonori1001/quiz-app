@@ -6,7 +6,7 @@
         {{ item.question }}
         <div class="answerList">
           <label v-for="(answer, key) in item.answers" :key="`answer-${key}`">
-            <input type="radio" v-model="answerItem" :value="answer" />{{ answer }}
+            <input type="radio" v-model="item.select" :value="answer" @click="selectItem"/>{{ answer }}
           </label>
         </div>
       </li>
@@ -29,8 +29,10 @@ export default {
       answerItem: "",
     };
   },
-  computed() {
-    
+  methods: {
+    selectItem() {
+      console.log('selectItem');
+    }
   }
 };
 </script>
