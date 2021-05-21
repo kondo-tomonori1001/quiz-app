@@ -1,7 +1,7 @@
 <template>
   <div>
     <QuestionList />
-    <router-view :items="questionList" />
+    <router-view :items="questionList" @answer-select="answerCheck"/>
   </div>
 </template>
 
@@ -38,6 +38,11 @@ export default {
       .finally(() => {
         this.loading = false;
       });
+  },
+  methods: {
+    answerCheck(key) {
+      console.log(key)
+    }
   }
 }
 </script>
