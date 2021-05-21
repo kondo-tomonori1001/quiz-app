@@ -1,18 +1,13 @@
 <template>
   <div>
-    <QuestionList />
-    <router-view :items="questionList" @answer-select="answerCheck"/>
+    <router-view :items="items" @answer-select="answerCheck"/>
   </div>
 </template>
 
 <script>
-import QuestionList from './components/QuestionList';
 import axios from 'axios';
 export default {
   name: 'App',
-  components: {
-    QuestionList,
-  },
   data() {
     return {
       items: [],
@@ -21,9 +16,9 @@ export default {
     }
   },
   computed: {
-    questionList() {
-      console.log('computed');
-      return this.items;
+    judgement() {
+      
+      return true;
     }
   },
   created() {
@@ -40,8 +35,14 @@ export default {
       });
   },
   methods: {
-    answerCheck(key) {
-      console.log(key)
+    answerCheck(...args) {
+      const [key,answer] = args;
+      const that = this.items[key];
+      if(that.answer === answer){
+        that.check = true;
+      } else {
+        that.check = false;
+      }
     }
   }
 }
