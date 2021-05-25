@@ -2,9 +2,11 @@
   <div>
     <div v-if="jugement">
       <p>おめでとうございます！ご応募はこちらから！</p>
+      <button>応募フォームのリンク</button>
     </div>
     <div v-else>
       <p>残念！何度も挑戦できるので、再チャレンジしてくださいね！</p>
+      <router-link to="/">戻る</router-link>
     </div>
     <ul>
       <li class="answer__item" v-for="(item, key) in items" :key="`answer-${key}`">
