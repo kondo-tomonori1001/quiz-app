@@ -8,6 +8,7 @@ import Answer from './page/Answer';
 
 export default new Router({
   mode: "history",
+  base: process.env.BASE_URL,
   routes: [
     //ルーティングの設定
     {
