@@ -32,7 +32,7 @@ export default {
   },
   created() {
     axios
-      .get("/data/question.json")
+      .get("/lesson/quizApp/data/question.json")
       .then((res) => {
         this.items = res.data;
       })
