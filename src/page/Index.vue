@@ -14,6 +14,7 @@
           >
             <input
               type="radio"
+              :name="`question${key+1}`"
               v-model="item.select"
               :value="answer"
               @click="answerSelect(key, answer)"
